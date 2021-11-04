@@ -1,0 +1,15 @@
+﻿Mods:
+{
+	Balance2:
+	{
+		ItemName:
+		{
+			SpearWood: Wooden Spear
+			SpearCopper: Copper Pike
+		}
+		ItemTooltip:
+		{
+			SpearWood: Use it to poke your enemies!
+		}
+	}
+}

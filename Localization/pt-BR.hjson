@@ -1,0 +1,24 @@
+Mods: 
+{
+    Balance2:
+    {
+        ItemName:
+        {
+            SpearWood: Lança de madeira
+            SpearCopper: Pique de cobre
+            SpearTin: Lança de estanho
+            SpearIron: Brandistock de ferro
+            SpearSilver: Guan dao de prata
+            SpearTungsten: Alabarda de tungstênio
+            SpearGold: Yari de ouro
+            SpearPlatinum: Dang Pa de platina
+            SpearCorruption: Agulha infectada
+        }
+        ItemTooltip:
+        {
+            SpearWood: Use para cutucar seus inimigos!
+            SpearCorruption: '''Ignora a defesa dos inimigos
+            'Quem aí tem medo de injeção?' '''
+        }
+    }
+}
