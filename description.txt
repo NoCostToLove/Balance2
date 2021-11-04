@@ -1,2 +1,7 @@
-The content includes : 
- - 10 new weapons
+Balance is, or it's going to be, a content mod focused on story progression, with new mechanics, adjustments, enemies and items.
+Most of the planned for the project is solely inside my head, and if want to get something out of paper, i'll do it.
+For now, Balance counts with:
+ - 10 weapons(Only spears)
+ - 2 small vanilla changes
+
+Remember, there is No Cost To Love.
