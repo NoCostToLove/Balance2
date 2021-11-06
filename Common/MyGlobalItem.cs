@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Balance2.Items
+namespace Balance2.Common
 {
     public class MyGlobalItem : GlobalItem
     {

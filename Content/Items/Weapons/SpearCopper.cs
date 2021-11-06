@@ -1,41 +1,43 @@
-﻿using Terraria;
+﻿using Terraria.ModLoader;
 using Terraria.ID;
-using Terraria.ModLoader;
+using Terraria;
 
-namespace Balance2.Items.Weapons
+namespace Balance2.Content.Items.Weapons
 {
-    public class SpearLead : ModItem
+    public class SpearCopper : ModItem
     {
+        public override string Texture => "Balance2/Assets/Textures/Items/Weapons/SpearCopper";
+
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Lead Trident");
+            DisplayName.SetDefault("Copper Pike");
         }
 
         public override void SetDefaults()
         {
-            Item.damage = 9;
+            Item.damage = 6;
             Item.DamageType = DamageClass.Melee;
+            Item.useTime = 28;
+            Item.useAnimation = 22;
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.width = 30;
             Item.height = 30;
-            Item.useAnimation = 22;
-            Item.useTime = 30;
-            Item.useStyle = ItemUseStyleID.Shoot;
-            Item.knockBack = 4.5f;
-            Item.shootSpeed = 2.6f;
+            Item.knockBack = 4f;
             Item.rare = ItemRarityID.White;
-            Item.value = 2590;
+            Item.value = 439;
+            Item.shootSpeed = 2.4f;
 
-            Item.noUseGraphic = true;
             Item.noMelee = true;
+            Item.noUseGraphic = true;
 
             Item.UseSound = SoundID.Item1;
-            Item.shoot = ModContent.ProjectileType<Projectiles.SpearLeadProjectile>();
+            Item.shoot = ModContent.ProjectileType<Projectiles.SpearCopperProjectile>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.LeadBar, 8)
+                .AddIngredient(ItemID.CopperBar, 8)
                 .AddIngredient(ItemID.Wood, 12)
                 .AddTile(TileID.Anvils)
                 .Register();

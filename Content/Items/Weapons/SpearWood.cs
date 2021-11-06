@@ -9,10 +9,11 @@ using Terraria;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 
-namespace Balance2.Items.Weapons
+namespace Balance2.Content.Items.Weapons
 {
     public class SpearWood : ModItem
     {
+        public override string Texture => "Balance2/Assets/Textures/Items/Weapons/SpearWood";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wooden spear");

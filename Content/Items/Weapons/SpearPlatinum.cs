@@ -1,40 +1,42 @@
 ﻿using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ID;
 
-namespace Balance2.Items.Weapons
+namespace Balance2.Content.Items.Weapons
 {
-    public class SpearTungsten : ModItem
+    public class SpearPlatinum : ModItem
     {
+        public override string Texture => "Balance2/Assets/Textures/Items/Weapons/SpearPlatinum";
+
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tungsten Halberd");
+            DisplayName.SetDefault("Platinum Dang Pa");
         }
+
         public override void SetDefaults()
         {
-            Item.damage = 11;
+            Item.damage = 13;
             Item.DamageType = DamageClass.Melee;
             Item.width = 30;
             Item.height = 30;
             Item.useAnimation = 22;
             Item.useTime = 30;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.value = 6590;
+            Item.value = 12400;
             Item.rare = ItemRarityID.White;
             Item.shootSpeed = 2.6f;
-            Item.knockBack = 4.5f;
 
             Item.noMelee = true;
             Item.noUseGraphic = true;
 
             Item.UseSound = SoundID.Item1;
-            Item.shoot = ModContent.ProjectileType<Projectiles.SpearTungstenProjectile>();
+            Item.shoot = ModContent.ProjectileType<Projectiles.SpearPlatinumProjectile>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.TungstenBar, 8)
+                .AddIngredient(ItemID.PlatinumBar, 8)
                 .AddIngredient(ItemID.Wood, 12)
                 .AddTile(TileID.Anvils)
                 .Register();

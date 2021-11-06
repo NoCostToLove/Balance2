@@ -1,41 +1,42 @@
 ﻿using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
+using Terraria.ModLoader;
 
-namespace Balance2.Items.Weapons
+namespace Balance2.Content.Items.Weapons
 {
-    public class SpearSilver : ModItem
+    public class SpearTungsten : ModItem
     {
+        public override string Texture => "Balance2/Assets/Textures/Items/Weapons/SpearTungsten";
+
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Silver Guan dao");
+            DisplayName.SetDefault("Tungsten Halberd");
         }
-
         public override void SetDefaults()
         {
-            Item.damage = 10;
+            Item.damage = 11;
             Item.DamageType = DamageClass.Melee;
             Item.width = 30;
             Item.height = 30;
-            Item.knockBack = 4f;
-            Item.useTime = 28;
-            Item.useAnimation = 18;
+            Item.useAnimation = 22;
+            Item.useTime = 30;
             Item.useStyle = ItemUseStyleID.Shoot;
+            Item.value = 6590;
             Item.rare = ItemRarityID.White;
-            Item.value = 4200;
-            Item.shootSpeed = 3f;
+            Item.shootSpeed = 2.6f;
+            Item.knockBack = 4.5f;
 
             Item.noMelee = true;
             Item.noUseGraphic = true;
 
             Item.UseSound = SoundID.Item1;
-            Item.shoot = ModContent.ProjectileType<Projectiles.SpearSilverProjectile>();
+            Item.shoot = ModContent.ProjectileType<Projectiles.SpearTungstenProjectile>();
         }
 
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddIngredient(ItemID.SilverBar, 8)
+                .AddIngredient(ItemID.TungstenBar, 8)
                 .AddIngredient(ItemID.Wood, 12)
                 .AddTile(TileID.Anvils)
                 .Register();

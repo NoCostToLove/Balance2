@@ -4,10 +4,12 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Balance2.Items.Weapons
+namespace Balance2.Content.Items.Weapons
 {
     public class SpearCorruption: ModItem
     {
+        public override string Texture => "Balance2/Assets/Textures/Items/Weapons/SpearCorruption";
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Infected needle");

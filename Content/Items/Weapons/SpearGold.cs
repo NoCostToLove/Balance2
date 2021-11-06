@@ -2,10 +2,12 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Balance2.Items.Weapons
+namespace Balance2.Content.Items.Weapons
 {
     public class SpearGold : ModItem
     {
+        public override string Texture => "Balance2/Assets/Textures/Items/Weapons/SpearGold";
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Golden Yari");

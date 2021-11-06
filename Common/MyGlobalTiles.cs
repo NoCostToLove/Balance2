@@ -3,7 +3,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Balance2.Tiles
+namespace Balance2.Common
 {
     public class MyGlobalTiles : GlobalTile
     {
@@ -11,7 +11,8 @@ namespace Balance2.Tiles
         {
             if (WorldGen.IsTileALeafyTreeTop(i,j) && type == TileID.Trees)
             {
-                Item.NewItem(i * 16, j * 16, 16, 16, ItemID.DirtBlock);
+                if(Main.rand.Next(100) < 35)
+                    Item.NewItem(i * 16, j * 16, 16, 16, ModContent.ItemType<Content.Items.LeafGreen>(), Main.rand.Next(3) + 1);
             }
 
             if (WorldGen.shadowOrbSmashed)
