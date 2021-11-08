@@ -10,6 +10,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Silver Guan dao");
+
+            DisplayName.AddTranslation(8, "Guan dao de prata");
         }
 
         public override void SetDefaults()

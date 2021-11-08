@@ -11,6 +11,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Iron Brandistock");
+
+            DisplayName.AddTranslation(8, "Brandistock de ferro");
         }
 
         public override void SetDefaults()

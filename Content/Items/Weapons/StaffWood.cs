@@ -16,8 +16,12 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wooden Staff");
-            Tooltip.SetDefault("Require spell tomes to use" +
-                "\n'A beginner's best friend!'");
+            Tooltip.SetDefault("Calls a green fairy to fight for you" +
+                "\nIt will disappear if you aren't holding the staff!");
+
+            DisplayName.AddTranslation(8, "Cajado de madeira");
+            Tooltip.AddTranslation(8, "Chama uma fada verde para lutar por você" +
+                "\nPermaneça com o cajado ou ela desaparecerá!");
             Item.staff[Item.type] = true;
         }
 
@@ -30,6 +34,7 @@ namespace Balance2.Content.Items.Weapons
         public override void SetDefaults()
         {
             Item.damage = 5;
+            Item.DamageType = DamageClass.Summon;
             Item.mana = 1;
             Item.width = 40;
             Item.height = 36;
@@ -56,14 +61,7 @@ namespace Balance2.Content.Items.Weapons
                 .Register();
         }
 
-        public override void ModifyWeaponDamage(Player player, ref StatModifier damage, ref float flat)
-        {
-            float magic = player.GetDamage<MagicDamageClass>();
-            float summon = player.GetDamage<SummonDamageClass>();
-
-            damage *= (magic + summon)/2;
-        }
-
+        /*
         public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             int tome = ModPlayerAttunments.attachScroll();
@@ -91,5 +89,6 @@ namespace Balance2.Content.Items.Weapons
 
             return false;
         }
+        */
     }
 }

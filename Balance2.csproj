@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../tModLoader.targets"/>
+  <Import Project="../tModLoader.targets" />
   <PropertyGroup>
     <AssemblyName>Balance2</AssemblyName>
     <TargetFramework>net5.0</TargetFramework>
@@ -8,6 +8,11 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.3"/>
+    <Compile Remove="Localization\**" />
+    <EmbeddedResource Remove="Localization\**" />
+    <None Remove="Localization\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.3" />
   </ItemGroup>
 </Project>

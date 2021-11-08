@@ -13,8 +13,12 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Infected needle");
-            Tooltip.SetDefault("Hits through enemies' defense" +
+            Tooltip.SetDefault("Ignores up to 15 defense" +
                 "\n'Fear right into their veins!'");
+
+            DisplayName.AddTranslation(8, "Agulha Infectada");
+            Tooltip.AddTranslation(8, "Ignora até 15 de defesa" +
+                "\n'Quem aí tem medo de agulha?'");
         }
 
         public override void SetDefaults()

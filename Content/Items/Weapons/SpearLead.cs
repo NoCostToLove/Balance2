@@ -11,6 +11,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lead Trident");
+
+            DisplayName.AddTranslation(8, "Tridente de chumbo");
         }
 
         public override void SetDefaults()

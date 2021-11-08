@@ -18,6 +18,7 @@ namespace Balance2.Common
             for (int i = 0; i < 12; i++)
                 attunment[i] = 0;
 
+            bonus = new float[9];
             for (int i = 0; i < 9; i++)
                 bonus[i] = 0.0f;
             //0 for life, 1 for earth, 2 for water, 3 for grass, 4 for fire, 5 for storm, 6 for wind, 7 for light, 8 for dark

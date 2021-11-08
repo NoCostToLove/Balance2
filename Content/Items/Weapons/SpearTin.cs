@@ -16,6 +16,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tin Spear");
+
+            DisplayName.AddTranslation(8, "Lança de estanho");
         }
         public override void SetDefaults()
         {

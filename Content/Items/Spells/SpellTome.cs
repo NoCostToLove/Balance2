@@ -7,7 +7,7 @@ namespace Balance2.Content.Items.Spelltomes
 {
     public class SpellTome : ModItem
     {
-        public override string Texture => "Balance2/Assets/Textures/Items/Spelltomes/SpellTome";
+        public override string Texture => "Balance2/Assets/Textures/Items/Spells/SpellTome";
 
         public override void SetStaticDefaults()
         {

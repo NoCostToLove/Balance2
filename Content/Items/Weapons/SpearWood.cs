@@ -18,6 +18,9 @@ namespace Balance2.Content.Items.Weapons
         {
             DisplayName.SetDefault("Wooden spear");
             Tooltip.SetDefault("Use it to poke your enemies!");
+
+            DisplayName.AddTranslation(8, "Lança de madeira");
+            Tooltip.AddTranslation(8, "Use para cutucar seus inimigos!");
         }
 
         public override void SetDefaults()

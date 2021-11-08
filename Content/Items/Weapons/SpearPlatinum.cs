@@ -11,6 +11,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Platinum Dang Pa");
+
+            DisplayName.AddTranslation(8, "Dang Pa de platina")
         }
 
         public override void SetDefaults()

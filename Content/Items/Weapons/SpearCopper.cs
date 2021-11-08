@@ -11,6 +11,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Copper Pike");
+
+            DisplayName.AddTranslation(8, "Pique de cobre");
         }
 
         public override void SetDefaults()

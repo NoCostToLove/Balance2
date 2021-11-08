@@ -11,6 +11,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Tungsten Halberd");
+
+            DisplayName.AddTranslation(8, "Alabarda de tungstênio");
         }
         public override void SetDefaults()
         {

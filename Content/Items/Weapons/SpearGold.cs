@@ -11,6 +11,8 @@ namespace Balance2.Content.Items.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Golden Yari");
+
+            DisplayName.AddTranslation(8, "Yari de ouro");
         }
 
         public override void SetDefaults()
