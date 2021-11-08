@@ -2,21 +2,23 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
-    public class SpearTinProjectile : ModProjectile
+    public class SpearCopperProjectile : ModProjectile
     {
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearCopperProjectile";
         public override void SetDefaults()
         {
-            Projectile.aiStyle = 19;
-            Projectile.penetrate = -1;
             Projectile.width = 16;
             Projectile.height = 16;
+            Projectile.aiStyle = 19;
+            Projectile.penetrate = -1;
             Projectile.alpha = 0;
-            Projectile.scale = 3f;
+            Projectile.scale = 1.2f;
 
-            Projectile.ownerHitCheck = true;
             Projectile.friendly = true;
+            Projectile.hide = true;
+            Projectile.ownerHitCheck = true;
             Projectile.tileCollide = false;
             Projectile.DamageType = DamageClass.Melee;
         }
@@ -30,6 +32,7 @@ namespace Balance2.Projectiles
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
+
             Vector2 mountedCenter = owner.RotatedRelativePoint(owner.MountedCenter, true);
             Projectile.direction = owner.direction;
             owner.heldProj = Projectile.whoAmI;
@@ -38,15 +41,15 @@ namespace Balance2.Projectiles
             Projectile.position.X = mountedCenter.X - (float)(Projectile.width / 2);
             Projectile.position.Y = mountedCenter.Y - (float)(Projectile.height / 2);
 
-            if(!owner.frozen)
+            if (!owner.frozen)
             {
-                if(movementFactor == 0)
+                if (movementFactor == 0)
                 {
-                    movementFactor = 3;
+                    movementFactor = 3f;
                     Projectile.netUpdate = true;
                 }
 
-                if(owner.itemAnimation < owner.itemAnimationMax / 3)
+                if (owner.itemAnimation < owner.itemAnimationMax / 3)
                 {
                     movementFactor -= 2.4f;
                 }
@@ -58,7 +61,7 @@ namespace Balance2.Projectiles
             }
 
             Projectile.position += Projectile.velocity * movementFactor;
-
+            
             if(owner.itemAnimation == 0)
             {
                 Projectile.Kill();

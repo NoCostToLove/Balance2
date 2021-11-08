@@ -13,6 +13,9 @@ Mods:
             SpearGold: Yari de ouro
             SpearPlatinum: Dang Pa de platina
             SpearCorruption: Agulha infectada
+
+            StaffWood: Cajado de madeira
+
             LeafGreen: Folha verde
         }
         ItemTooltip:
@@ -20,6 +23,10 @@ Mods:
             SpearWood: Use para cutucar seus inimigos!
             SpearCorruption: '''Ignora a defesa dos inimigos
             'Quem aí tem medo de injeção?' '''
+
+            StaffWood:'''Tomos de feitiço são necessários para o uso
+            'O melhor amigo de um iniciante!' '''
+
             LeafGreen: '''As vezes cai de árvores
             Apenas uma pequena folha, nada demais'''
         }

@@ -29,7 +29,7 @@ namespace Balance2.Content.Items.Weapons
             Item.useAnimation = 24;
             Item.rare = ItemRarityID.White;
             Item.value = 590;
-            Item.shootSpeed = 2.0f;
+            Item.shootSpeed = 2.7f;
 
             Item.noMelee = true;
             Item.noUseGraphic = true;

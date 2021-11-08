@@ -2,23 +2,24 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
-    public class SpearLeadProjectile : ModProjectile
+    public class SpearTinProjectile : ModProjectile
     {
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearTinProjectile";
         public override void SetDefaults()
         {
-            Projectile.width = 24;
-            Projectile.height = 24;
-            Projectile.scale = 1f;
-            Projectile.penetrate = -1;
-            Projectile.alpha = 0;
             Projectile.aiStyle = 19;
+            Projectile.penetrate = -1;
+            Projectile.width = 16;
+            Projectile.height = 16;
+            Projectile.alpha = 0;
+            Projectile.scale = 1.2f;
 
-            Projectile.DamageType = DamageClass.Melee;
-            Projectile.tileCollide = false;
             Projectile.ownerHitCheck = true;
             Projectile.friendly = true;
+            Projectile.tileCollide = false;
+            Projectile.DamageType = DamageClass.Melee;
         }
 
         public float movementFactor
@@ -42,7 +43,7 @@ namespace Balance2.Projectiles
             {
                 if(movementFactor == 0)
                 {
-                    movementFactor = 3f;
+                    movementFactor = 3;
                     Projectile.netUpdate = true;
                 }
 

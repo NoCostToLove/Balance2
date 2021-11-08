@@ -1,25 +1,25 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
-    public class SpearCopperProjectile : ModProjectile
+    public class SpearPlatinumProjectile : ModProjectile
     {
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearPlatinumProjectile";
         public override void SetDefaults()
         {
-            Projectile.width = 16;
-            Projectile.height = 16;
-            Projectile.aiStyle = 19;
-            Projectile.penetrate = -1;
+            Projectile.height = 15;
+            Projectile.width = 15;
+            Projectile.scale = 0.8f;
             Projectile.alpha = 0;
-            Projectile.scale = 1.2f;
+            Projectile.penetrate = -1;
+            Projectile.aiStyle = 19;
 
-            Projectile.friendly = true;
-            Projectile.hide = true;
-            Projectile.ownerHitCheck = true;
-            Projectile.tileCollide = false;
             Projectile.DamageType = DamageClass.Melee;
+            Projectile.tileCollide = false;
+            Projectile.friendly = true;
+            Projectile.ownerHitCheck = true;
         }
 
         public float movementFactor
@@ -31,11 +31,10 @@ namespace Balance2.Projectiles
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
-
             Vector2 mountedCenter = owner.RotatedRelativePoint(owner.MountedCenter, true);
             Projectile.direction = owner.direction;
-            owner.heldProj = Projectile.whoAmI;
             owner.itemTime = owner.itemAnimation;
+            owner.heldProj = Projectile.whoAmI;
 
             Projectile.position.X = mountedCenter.X - (float)(Projectile.width / 2);
             Projectile.position.Y = mountedCenter.Y - (float)(Projectile.height / 2);
@@ -52,7 +51,6 @@ namespace Balance2.Projectiles
                 {
                     movementFactor -= 2.4f;
                 }
-
                 else
                 {
                     movementFactor += 2.1f;
@@ -60,15 +58,15 @@ namespace Balance2.Projectiles
             }
 
             Projectile.position += Projectile.velocity * movementFactor;
-            
-            if(owner.itemAnimation == 0)
+
+            if (owner.itemAnimation == 0)
             {
                 Projectile.Kill();
             }
 
             Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.ToRadians(135f);
 
-            if(Projectile.direction == -1)
+            if (Projectile.direction == -1)
             {
                 Projectile.rotation -= MathHelper.ToRadians(90f);
             }

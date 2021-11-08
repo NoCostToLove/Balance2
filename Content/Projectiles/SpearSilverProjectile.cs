@@ -2,10 +2,11 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
     public class SpearSilverProjectile : ModProjectile
     {
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearSilverProjectile";
         public override void SetDefaults()
         {
             Projectile.height = 15;

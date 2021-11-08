@@ -1,29 +1,25 @@
-﻿using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
+﻿using Terraria;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
-    public class SpearCorruptionProjectile : ModProjectile
+    public class SpearGoldProjectile : ModProjectile
     {
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearGoldProjectile";
         public override void SetDefaults()
         {
-            Projectile.width = 20;
-            Projectile.height = 20;
-            Projectile.aiStyle = 19;
-            Projectile.penetrate = -1;
+            Projectile.height = 15;
+            Projectile.width = 15;
+            Projectile.scale = 1.25f;
             Projectile.alpha = 0;
-            Projectile.scale = 1.2f;
+            Projectile.penetrate = -1;
+            Projectile.aiStyle = 19;
 
-            Projectile.friendly = true;
-            Projectile.hide = true;
-            Projectile.ownerHitCheck = true;
-            Projectile.tileCollide = false;
             Projectile.DamageType = DamageClass.Melee;
-
-            Projectile.usesLocalNPCImmunity = true;
-            Projectile.localNPCHitCooldown = 8;
+            Projectile.tileCollide = false;
+            Projectile.friendly = true;
+            Projectile.ownerHitCheck = true;
         }
 
         public float movementFactor
@@ -35,11 +31,10 @@ namespace Balance2.Projectiles
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
-
             Vector2 mountedCenter = owner.RotatedRelativePoint(owner.MountedCenter, true);
             Projectile.direction = owner.direction;
-            owner.heldProj = Projectile.whoAmI;
             owner.itemTime = owner.itemAnimation;
+            owner.heldProj = Projectile.whoAmI;
 
             Projectile.position.X = mountedCenter.X - (float)(Projectile.width / 2);
             Projectile.position.Y = mountedCenter.Y - (float)(Projectile.height / 2);
@@ -56,7 +51,6 @@ namespace Balance2.Projectiles
                 {
                     movementFactor -= 2.4f;
                 }
-
                 else
                 {
                     movementFactor += 2.1f;
@@ -75,24 +69,6 @@ namespace Balance2.Projectiles
             if (Projectile.direction == -1)
             {
                 Projectile.rotation -= MathHelper.ToRadians(90f);
-            }
-
-            if (Main.rand.Next(3) != 2)
-            {
-                int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Demonite);
-            }
-        }
-
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
-        {
-            if (target.defense <= 15)
-            {
-                damage += target.defense / 2;
-            }
-
-            else
-            {
-                damage += 7;
             }
         }
     }

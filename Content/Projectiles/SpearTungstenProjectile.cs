@@ -2,28 +2,24 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
-    public class SpearWoodProjectile : ModProjectile
+    public class SpearTungstenProjectile : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Wooden Spear Projectile");
-        }
-
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearTungstenProjectile";
         public override void SetDefaults()
         {
             Projectile.width = 15;
             Projectile.height = 15;
+            Projectile.scale = 1.45f;
+            Projectile.penetrate = -1;
             Projectile.aiStyle = 19;
             Projectile.alpha = 0;
-            Projectile.penetrate = -1;
 
-            Projectile.hide = true;
-            Projectile.friendly = true;
-            Projectile.ownerHitCheck = true;
-            Projectile.tileCollide = false;
             Projectile.DamageType = DamageClass.Melee;
+            Projectile.ownerHitCheck = true;
+            Projectile.friendly = true;
+            Projectile.tileCollide = false;
         }
 
         public float movementFactor
@@ -35,12 +31,11 @@ namespace Balance2.Projectiles
         public override void AI()
         {
             Player owner = Main.player[Projectile.owner];
-
-            
             Vector2 mountedCenter = owner.RotatedRelativePoint(owner.MountedCenter, true);
-            Projectile.direction = owner.direction;
             owner.heldProj = Projectile.whoAmI;
             owner.itemTime = owner.itemAnimation;
+            Projectile.direction = owner.direction;
+
             Projectile.position.X = mountedCenter.X - (float)(Projectile.width / 2);
             Projectile.position.Y = mountedCenter.Y - (float)(Projectile.height / 2);
 
@@ -52,16 +47,14 @@ namespace Balance2.Projectiles
                     Projectile.netUpdate = true;
                 }
 
-                if (owner.itemAnimation < owner.itemAnimationMax / 3)
+                if(owner.itemAnimation < owner.itemAnimationMax / 3)
                 {
                     movementFactor -= 2.4f;
                 }
-
                 else
                 {
                     movementFactor += 2.1f;
                 }
-
             }
 
             Projectile.position += Projectile.velocity * movementFactor;

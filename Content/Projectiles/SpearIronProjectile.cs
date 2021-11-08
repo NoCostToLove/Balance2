@@ -1,24 +1,26 @@
-﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
+using Microsoft.Xna.Framework;
 
-namespace Balance2.Projectiles
+namespace Balance2.Content.Projectiles
 {
-    public class SpearTungstenProjectile : ModProjectile
+    public class SpearIronProjectile : ModProjectile
     {
+        public override string Texture => "Balance2/Assets/Textures/Projectiles/SpearIronProjectile";
         public override void SetDefaults()
         {
-            Projectile.width = 15;
-            Projectile.height = 15;
-            Projectile.scale = 1.45f;
-            Projectile.penetrate = -1;
+            Projectile.width = 24;
+            Projectile.height = 24;
             Projectile.aiStyle = 19;
+            Projectile.penetrate = -1;
             Projectile.alpha = 0;
+            Projectile.scale = 1.2f;
 
-            Projectile.DamageType = DamageClass.Melee;
             Projectile.ownerHitCheck = true;
             Projectile.friendly = true;
             Projectile.tileCollide = false;
+            Projectile.DamageType = DamageClass.Melee;
         }
 
         public float movementFactor
@@ -31,25 +33,26 @@ namespace Balance2.Projectiles
         {
             Player owner = Main.player[Projectile.owner];
             Vector2 mountedCenter = owner.RotatedRelativePoint(owner.MountedCenter, true);
+            Projectile.direction = owner.direction;
             owner.heldProj = Projectile.whoAmI;
             owner.itemTime = owner.itemAnimation;
-            Projectile.direction = owner.direction;
 
             Projectile.position.X = mountedCenter.X - (float)(Projectile.width / 2);
             Projectile.position.Y = mountedCenter.Y - (float)(Projectile.height / 2);
 
             if(!owner.frozen)
             {
-                if(movementFactor == 0)
+                if (movementFactor == 0)
                 {
                     movementFactor = 3f;
                     Projectile.netUpdate = true;
                 }
 
-                if(owner.itemAnimation < owner.itemAnimationMax / 3)
+                if (owner.itemAnimation < owner.itemAnimationMax / 3)
                 {
                     movementFactor -= 2.4f;
                 }
+
                 else
                 {
                     movementFactor += 2.1f;
